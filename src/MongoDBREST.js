@@ -6,7 +6,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-
 app.use(express.json());
 
 // Connect to the MongoDB database
@@ -62,7 +61,7 @@ app.put('/books/:id', async (req, res) => {
 
 // Delete a book
 app.delete('/books/:id', async (req, res) => {
-  const result = await Book.deleteOne({ id: req.paramsa.id });
+  const result = await Book.deleteOne({ id: req.params.id });
   res.send(result);
 });
 
